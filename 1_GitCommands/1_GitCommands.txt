@@ -38,3 +38,6 @@ Shows all the changed, deleted and added files. Also shows the files which are s
 9. git restore --staged .
 It undoes all the staging which we previously did. We can replace the '.' with the file name we need to remove 
 the particular file from staging.
+
+10. git log
+Lists the commits which we performed.
