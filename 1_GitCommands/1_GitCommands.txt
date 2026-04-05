@@ -41,3 +41,11 @@ the particular file from staging.
 
 10. git log
 Lists the commits which we performed.
+
+11. git diff
+git status indicates which file are added, deleted, modified, staged for commit etc. git diff actually shows 
+the differnce in content of the files changed before staging it.
+
+****************************************************
+* I am making a dummy change here in the sk branch *
+****************************************************
