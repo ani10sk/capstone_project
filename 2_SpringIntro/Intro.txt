@@ -1,0 +1,47 @@
+Spring and SpringBoot
+Spring is an umbrella of a lot of libraries like:-
+Spring web, Spring security, Spring JPA, Spring Eureka etc..
+Like the other libraries Springboot is a library within Spring
+
+Spring web
+Needed for developing API's
+Required if we need to connect to 3rd party api's
+
+Spring security
+Helps with whitelisting, blacklisting
+
+Spring JPA
+Needed for performing CRUD operations. 
+Will eliminate the need for SQL queries.
+
+SpringBoot
+Along with this we get a web server also. It is a tomcat server which runs on port 8080
+It helps us with 
+1. Dependency Injection
+2. Config Management
+
+1. We can have 'n' controllers in our microservices. Suppose that we have A, B and C controllers. Now let us 
+assume that we have services 1, 2, 3, 4, and 5. And we have a, b, c and d as the repo layer.
+Inversion of Control -  We need not be worried about the creation and initialization of the variables, 
+the spring framework will take care of that for us
+2. Assume that we have an app running in 3 environments, dev, uat and prod. For these 3 environments the port in which 
+it is running will be different, the db credentials will be different. All these are secret configurations and 
+will vary from environment to environment. The spring will read from the relevant file and run in the relevant 
+environment.
+
+API(Application Programming Interface)
+API is a contract to connect to any web application.
+It is a method, that is exposed to the entire world.
+REST API
+1. API's should be defined around the resources which is going to be affected.
+resource->Entity/Model which is stored in the db
+C(Create), R(Read), U(Update), D(Delete)
+POST, GET, PUT/PATCH, DELETE 
+
+PUT Vs PATCH
+If I need to update all 'n' feilds in a particular entity, then we should use PUT api, if it is to be called 
+a REST api, otherwise we should use PATCH
+(Note: id will remain as is)
+2. REST APIs should be stateless.
+An API should not depend on other APIs
+3. REST APIs interact interms of JSON or XML
