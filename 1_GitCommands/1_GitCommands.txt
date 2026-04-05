@@ -41,3 +41,8 @@ the particular file from staging.
 
 10. git log
 Lists the commits which we performed.
+
+Once we make the changes in a seperate branch we can push the changes to remote from local by setting the 
+upstream to the new repo. From this new branched repo we can created a pull request to the main branch by adding the 
+necessary details. Once the necessary details are added, we can delete the newly created branch. This deletion 
+will only occur in the remote and locally we will still be able to access the branch.
