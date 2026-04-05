@@ -70,3 +70,15 @@ Similarly if we use soft reset, the changes will go to staging form
 Hard Reset -> Out completely
 Mix Reset -> Places the changes as unstaged commit
 Soft Reset -> Places the changes as staged commit
+
+13. git merge <branch_name>
+This will merge the current working branch with whichever branch we wish to merge onto. If there are no conflicts, 
+then it will work fine, if not we have to resolve the merge conflicts and then commit once more.
+Conflicts can also occur pulling pulling, this also should be resolved in the same manner.
+
+14. git rebase <branch_name>
+This is used to resove the diamond problem
+Suppose we have a main branch and a branch called sk. Each of these branches have multiple commits. Now if we 
+merge teh sk branch onto the main branch, the new commit in the main branch will have 2 previous commit versions.
+Now what we should do is, ideally before merging sk branch onto the main branch, from sk branch we should rebase 
+it with the main branch. And then after rebasing it we should merge the new sk branch with the main branch.
