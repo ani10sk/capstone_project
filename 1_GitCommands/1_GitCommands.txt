@@ -57,3 +57,8 @@ will only occur in the remote and locally we will still be able to access the br
 
 12. git reset
 This will entirely undo the previous commit command we made in our local if they are not pushed to remote.
+This done using the below command
+git reset --hard Head~1
+This does a hard reset from the first commit message appearing in the git log output and goes back  to the 
+one before it. We can replace 1 with 2, 3 etc, but since those merges requests are pushed into the remote 
+they can be restored by using the pull command.
