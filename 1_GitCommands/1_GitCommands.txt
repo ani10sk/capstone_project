@@ -1,0 +1,40 @@
+1. git clone <git_url>
+Clones the repository onto the described location
+
+2. git add .
+Addes the files to the present commit session, the '.' adds al the files to be committed, 
+optionally instead of '.' we can use certain file names also to commit only those file names.
+
+3. git commit -m "<commit message>"
+Once we have added the files required to be committed, we can commit those changes with a commit 
+message
+
+4. git push -u origin <branch_name>
+Once we have committed the changes, we can push it to whichever branch we need the changes to be pushed 
+into.
+
+5. git branch <branch_name>
+Creates a new branch which is based on the current branch we are curently in. If we give git branch, 
+it will list the branches of the repo and the current working repo.
+
+6. git checkout <branch_name>
+This is used to navigate to a branch which we created previously.
+
+7. git checkout -b <branch_name>
+This is used to navigate to a new branch, and if the branch name does not exist, it creates a new branch 
+with that name and then uses the same branch.
+
+Even when a git repo is created as public, it does not mean that anyone can contribute to the repository.
+for contributing we require the permission from the author of the repository. We can perform fork, which 
+creates a copy of all the contents to our personal github repo. In this repo we can add, remove functionality 
+and check the working.
+
+We can add something like .gitignore file which can be used to include the names of the files like 
+sensitive info file, so that they are not pushed to the repo, even when pushed.
+
+8. git status
+Shows all the changed, deleted and added files. Also shows the files which are staged. (added)
+
+9. git restore --staged .
+It undoes all the staging which we previously did. We can replace the '.' with the file name we need to remove 
+the particular file from staging.
