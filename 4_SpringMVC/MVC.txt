@@ -1,0 +1,28 @@
+MVC -> Model View Controller 
+We will take the analogy of a restaurant
+Cafe -> Waiter (validation) -> Chef -> Pantry/Fridge
+UI (Frontend) -> Controller (Validation mapping) -> Service layer (Handles business logic, is analogous to chef) -> DAO / Repo layer (To perform CRUD operation on dB)
+Helps with loose coupling
+
+How does requests get handled in spring?
+/products api should be redirected to the products controller
+/user should be redirected to the user controller
+Inside SpringBoot we have a component called the dispatcher servlet
+request -> dispatcher servlet (orchestrator of our requests) -> mapping handler (Redirects the apis to the relevant controller)
+mapping handler directs the api to the relevant controller and then it also verifies if we have a method that suits the arguments provided 
+in the api end point.
+Once the mapping handler returns the controller and the method relevant to the api request made, the dispatcher servlet uses the controller and 
+the method and the DAO service to retrieve and return the data to the dispatcher servlet.
+The dispatcher servlet passes the response onto a view resolver, which has stored the relevant status code for each api response. It has a view 
+associated to each status code.
+Once the view resolver returns the view, the dispatcher servlet invokes that flow and then it is returned by the dispatcher servlet.
+
+LLD of a product catalog service
+We will need a product and a category model. While developing code, always start with the models and then follow it up with the 
+controller.
+We have to use a decorator @RestController to register the controller as a spring component. @COntroller would also work, 
+but that would mean the return type from the apis are html json etc, but since we are working with REST apis the return type 
+would mostly be json, so we use @RestController
+
+Spring Bean is an object having singleton scope in spring framework. This object will be stored in spring context and wherever requried it 
+returns the reference of this object.
