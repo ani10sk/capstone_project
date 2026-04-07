@@ -1,0 +1,11 @@
+Client -> Controller -> Service -> Fake store API (3rd party api)
+
+In the product catalog service, we should not give complete access to the product model to a seller, as there are 
+feilds which should be in line with our business logic. So we limit the access to certain fields of the product 
+and the rest is not given access.
+
+To ensure that the original product model is never exposed, we use product dto.
+
+Object mapper converts objects to json and vice versa. The mapper initially calls the default contructor of the model 
+and so all teh feilds are set as null. Then it takes the value passed and fills in the values for whichever fields the 
+value exists for.
