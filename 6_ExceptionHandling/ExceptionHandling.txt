@@ -1,0 +1,32 @@
+Suppose that we have an api in our controller layer
+@GetMapping("{id}")
+public ResponseEntity<ProductDTO> getProductById(@PathVariable("id") Long productId) {
+    if (productId <= 0) {
+//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        throw new IllegalArgumentException("Please enter a valid product ID");
+    }
+    Product product = productService.getProductById(productId);
+    if (product != null) {
+        ProductDTO productDTO = from(product);
+        return new ResponseEntity<>(productDTO, HttpStatus.OK);
+    }
+    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+}
+
+The product id when less than 0 throws an exception, but this is not handled gracefully.
+
+To handle this issue gracefullt create a new file called ControllerAdvisor.java so that whenever an exception is thrown 
+the function is handled.
+
+@RestControllerAdvice
+public class ControllerAdvisor {
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+}
+
+The @RestControllerAdvice annotation is used. whenever the IllegalArgumentException is thrown the function is called.
+Suppose if we need two exceptions which initiate a call to the function, 
+@ExceptionHandler({IllegalArgumentException.class, NullPointerException.class})
+Add all required exceptions to the relevant function.
