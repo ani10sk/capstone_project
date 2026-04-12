@@ -1,0 +1,31 @@
+We have to create and connect to a db from the application
+package -> dB 
+class -> Table
+attributes -> columns
+rows -> class
+
+A query when performed on a table from the application returns ResultSet. This has to be converted into a model that can be converted 
+into a class.
+This mapping is very difficult manually user a mapper.
+
+For this we must use ORM(Object relational model)
+The popular ORMs are Hibernate, jooq etc.
+We do not create a dependeny of an ORM in our project as we may need to change the ORM used. So we use an interface 
+This interface is called JPA. (Java Persistence API)
+It can work only on relational databases. It does not help in connecting with a dB, and helps in performing CRUD operations.
+For connecting with dB, we would need connectors/drivers.
+JDBC connector
+1. mySQL connector 
+2. postgres connector
+
+mySQL connector + JPA can be used to connect to dB and perform CRUD operations
+
+Once we add the dependency for mysql connector and jpa, we have to add annotation for all the models for which we require tables to be 
+created for in the database.
+
+@MappedSuperclass - Usually added as an annotation for the Basemodel so that all other classes can extend from this class.
+@Entity - Added so that a table associated for the model is created.
+@Id - Added as a primary key attribute to the class.
+
+If we have a foreign key aor a complex datatype within a particular model, then we should specify the cardinality.
+The cardinality should be defined from class to object.
