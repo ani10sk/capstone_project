@@ -1,0 +1,27 @@
+UUID used to generate ids for storing data.
+
+int can be a suitable candidate for a primary key, the values can range from 0 - 2^33-1
+Even though this is a large number, it will not be sutable to store all data in certain use cases (Like storing emails in a 
+mailing service).
+
+long can be another candidate, it can have 2^64 values. This will provide storage for a much larger set of data. 
+The ids will be consecutive.
+1. There will be collisions for some keys.
+2. SInce the keys are sequential, we will be able to icnrement values and retreive data by qurying in a loop. This will 
+be a security concern in the application.
+
+We can use mac address of the system that generates these records as the primary key. 
+This will increase security and reduce collisions.
+
+GUID -> Globally Unique Identifier
+UUID -> Universally Unique Identifier
+
+UUID will be unique accross a database system. It can have a duplicate id for a different database
+
+Representing inheritance in dB 
+1. Table for class
+Each class will have a different table in dB
+2. Joined class -> Foreign Key Relation
+3. Single table
+For all the clases we store data in a singke table
+This will be a sparse table(Null values)
