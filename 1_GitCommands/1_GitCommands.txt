@@ -63,7 +63,7 @@ This does a hard reset from the first commit message appearing in the git log ou
 one before it. We can replace 1 with 2, 3 etc, but since those merges requests are pushed into the remote 
 they can be restored by using the pull command.
 Similarly we can have a mixed rest and a soft reset
-git reset --mix Head~1
+git reset --mixed Head~1
 This will undo all the commits which we performed and then place them in the unstaged form.
 Similarly if we use soft reset, the changes will go to staging form
 

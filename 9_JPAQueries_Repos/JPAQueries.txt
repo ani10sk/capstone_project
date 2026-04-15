@@ -1,0 +1,18 @@
+@Service, @Controller can be used on concrete classes so that spring creates bean for the class.
+
+Note: The beans created by spring will be in camel case.
+fakeStoreProductService   (FakeStoreProductService.java)
+storageProductService   (StorageProductService.java)
+
+If we are creating 2 implementation of a service or anything for that matter, we can assign the main service as 
+@Primary so that this bean is assigned in the case of autowiring in the controller.
+Now assume that we need to use both the implementations in the same controller, we can use an annotation along with 
+@Autowired. We can set @Qualifier("bean-name"). This way will ensure that we can use both the service implementation 
+within the same controller
+
+Applicable JPA syntax in JPA.
+
+save() is a function implemented by hibernate. It will accept a model as a return type and and returns the same model from 
+the method. 
+The save function will insert a new record if the id sent is absent, otherwise it will update the entire row in the 
+concerned table. 
