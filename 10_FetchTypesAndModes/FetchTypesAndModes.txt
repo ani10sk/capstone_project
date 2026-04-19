@@ -1,0 +1,15 @@
+Fetch types
+1. Eager
+In the product catalog service, we have an attribute products in category which is another model. In eager loading the products 
+are also loaded. And this is irrespective of whether we are using the child data or not.
+2. Lazy
+In this case when we query for category, initially only category data is fetched, and then if product data is requried, 
+another sperate query is initiated.
+
+Fetch Mode 
+When we are retreiving data in eager and lazy loading, it is fetched using select queries and join queries as per the fetch 
+type we configure. But this fetch mode select, join, subquery can be configured using fetch mode
+
+https://www.baeldung.com/spring-request-param
+
+https://www.baeldung.com/hibernate-inheritance
