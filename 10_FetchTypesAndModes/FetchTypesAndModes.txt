@@ -10,6 +10,8 @@ Fetch Mode
 When we are retreiving data in eager and lazy loading, it is fetched using select queries and join queries as per the fetch 
 type we configure. But this fetch mode select, join, subquery can be configured using fetch mode
 
+Fetch mode will generally take precidence in behaviour over fetch type.
+
 https://www.baeldung.com/spring-request-param
 
 https://www.baeldung.com/hibernate-inheritance

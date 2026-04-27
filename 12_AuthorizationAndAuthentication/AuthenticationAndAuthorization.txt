@@ -1,0 +1,33 @@
+Autentication -> Validating or identifying someone.
+Who is able to access certain resource is called authorization.
+
+RBAC (Role Based Access Control)
+User
+Role - DB Reader, Admin, DB Writer
+Previlege - READ, WRITE, DELETE, etc...
+The role and previlege will be on certain resources
+
+OAuth (Open Authorization)
+OAuth 2.0 is a defacto in industry for authentication and authorization.
+Components in authentication/authorization
+User
+Resource 
+Auth server
+Client
+
+Client -> Auth Server -> Client -> Auth Server (Gnerates token, stores it in dB)-> Client -> Resource -> 
+Client (Furnishes token) -> Resource (Checks Validity)-> Auth Server
+That last step is not scaleable as billions of resources will have to check validity with auth server.
+
+JWT token (JSON Web Token)
+Consists of 3 parts
+X . Y . Z
+X-Header
+It is the name if the encryption algorithm. Either RSA or HS256 in 64 bit encoded format
+Y-Payload
+Payload is the detail of client, token and user. user_id, user role, expiry, issued at, session. Base 64 encoding is applied on 
+this payload.
+Z-Signature
+Apply encryption algorithm on (encoded header+"."+encoded payload,secret)
+encoding-reducing size of a very huge file.
+encryption-Making data password protected.

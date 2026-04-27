@@ -1,0 +1,28 @@
+Unit Testing
+code coverage - % of your code tested by our unit tests. Also known as line coverage.
+branch coverage - The loops if they have an or condition will have 2 sperate branches
+eg: if (index < 0 || index >= a.length) {}
+the index when <0 and >a.length it is 2 sperate branches. So to make teh branch coverage 100% we should test with conditions 
+that should go to both the extremes. This and line coverage are different.
+
+Intergration testing 
+We had intergrated fakestore apis into our application.
+The need for nitergration testing is 
+1. Scope would have changed. The error message would have come with a status code of 400, now it might have come with a status code 
+of 200 but the error message sent would be self explanatory.
+2. Changes in the response structure. The conversion of product to productdto would fail in the case.
+
+Functional testing
+No coding is requried. Not done by developers, and is maily done by product managers, qa team etc.
+It is testing the behaviour of the system ensuring that the basic functionality of the system remains the same.
+
+Best practices for writing unit test cases
+1. we should be able to write ut's fast(When we have a proper clarity on what needs to be done, we will be able to write ut's fast)
+arrange, act, assert.
+arrange -> creating an object of a class whose method we are going to test and mock the external dependency.
+act -> calling method for which we need ut to be performed. Store its result ins some variable.
+assert -> Now we validate the expected result wirg the actual result.
+2. UT should be automatic. To assert the calculated value we should have a hard coded value which can be used to assert with the 
+calculated value.
+3. UT should test the behaviour and not the implementation
+The end result is important and not the way we arrive at the end result.
